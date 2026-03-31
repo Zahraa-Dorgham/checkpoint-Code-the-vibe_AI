@@ -72,11 +72,9 @@
 
         .card img {
             width: 100%;
-            height: auto;
-            /* Maintient le ratio carré */
+            height: auto; /* Maintient le ratio carré */
             border-radius: 10px;
-            display: block;
-            /* Évite les espaces sous l'image */
+            display: block; /* Évite les espaces sous l'image */
         }
 
         .card h3 {
@@ -103,29 +101,40 @@
         <button id="toggleTheme">Changer le Thème</button>
     </header>
 
-    <section class="gallery">
-        <div class="card">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgd6cy8ylaMor4rSBkZbA-7oFMUcBupdN-6SU9hVsuc_RB0Dp-nqfdeRNbeIj9"
-                alt="T-shirt gris" />
-            <h3>T-shirt Basique</h3>
-            <p>Produit de haute qualité</p>
+<section class="gallery">
+    <div class="card">
+        <div class="img-container">
+            <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=600&h=600&auto=format&fit=crop"
+                alt="T-shirt Gris" />
         </div>
+        <div class="card-info">
+            <h3>Product 1</h3>
+            <p>High quality product</p>
+        </div>
+    </div>
 
-        <div class="card">
+    <div class="card">
+        <div class="img-container">
             <img src="https://images.unsplash.com/photo-1543076447-215ad9ba6923?q=80&w=600&h=600&auto=format&fit=crop"
-                alt="Veste en jean" />
-            <h3>Veste en Jean</h3>
-            <p>Design moderne</p>
+                alt="Veste en Jean" />
         </div>
+        <div class="card-info">
+            <h3>Product 2</h3>
+            <p>Modern design</p>
+        </div>
+    </div>
 
-        <div class="card">
+    <div class="card">
+        <div class="img-container">
             <img src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?q=80&w=600&h=600&auto=format&fit=crop"
-                alt="Pull beige" />
-            <h3>Pull en Laine</h3>
-            <p>Meilleure vente</p>
+                alt="Pull en Laine" />
         </div>
-    </section>
-
+        <div class="card-info">
+            <h3>Product 3</h3>
+            <p>Best seller</p>
+        </div>
+    </div>
+</section>
     <script>
         const toggleBtn = document.getElementById("toggleTheme");
 
