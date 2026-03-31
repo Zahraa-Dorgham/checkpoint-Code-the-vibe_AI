@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Galerie de Vêtements</title>
+
+    <style>
+        :root {
+            --bg: #ffffff;
+            --text: #111;
+            --card: #f4f4f4;
+            --shadow: rgba(0, 0, 0, 0.1);
+        }
+
+        body.dark {
+            --bg: #121212;
+            --text: #ffffff;
+            --card: #1e1e1e;
+            --shadow: rgba(255, 255, 255, 0.1);
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            transition: background 0.3s, color 0.3s;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            border-bottom: 1px solid var(--shadow);
+        }
+
+        button {
+            padding: 10px 15px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: var(--text);
+            color: var(--bg);
+            font-weight: bold;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .card {
+            background: var(--card);
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px var(--shadow);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 0.6s forwards;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px var(--shadow);
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+            /* Maintient le ratio carré */
+            border-radius: 10px;
+            display: block;
+            /* Évite les espaces sous l'image */
+        }
+
+        .card h3 {
+            margin: 15px 0 5px 0;
+        }
+
+        .card p {
+            margin: 0;
+            opacity: 0.8;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h2>Boutique de Vêtements</h2>
+        <button id="toggleTheme">Changer le Thème</button>
+    </header>
+
+    <section class="gallery">
+        <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgd6cy8ylaMor4rSBkZbA-7oFMUcBupdN-6SU9hVsuc_RB0Dp-nqfdeRNbeIj9"
+                alt="T-shirt gris" />
+            <h3>T-shirt Basique</h3>
+            <p>Produit de haute qualité</p>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1543076447-215ad9ba6923?q=80&w=600&h=600&auto=format&fit=crop"
+                alt="Veste en jean" />
+            <h3>Veste en Jean</h3>
+            <p>Design moderne</p>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?q=80&w=600&h=600&auto=format&fit=crop"
+                alt="Pull beige" />
+            <h3>Pull en Laine</h3>
+            <p>Meilleure vente</p>
+        </div>
+    </section>
+
+    <script>
+        const toggleBtn = document.getElementById("toggleTheme");
+
+        toggleBtn.addEventListener("click", () => {
+            document.body.classList.toggle("dark");
+        });
+    </script>
+</body>
+
+</html>
